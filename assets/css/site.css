@@ -1,0 +1,40 @@
+/* ACCROC – estilos comuns a todas as páginas */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,sans-serif;color:#0D1B2E;background:#fff}
+a{color:#002E5D}a:hover{color:#001E3E}
+img{max-width:100%}
+[hidden]{display:none !important}
+.hero-bg{position:relative;overflow:hidden;background:#001E3E}
+.hero-bg::before{content:"";position:absolute;inset:-12px;background:url(../img/Centro_dia_frente.jpg) center/cover no-repeat;filter:blur(3px)}
+.hero-bg::after{content:"";position:absolute;inset:0;background:rgba(0,30,62,0.74)}
+
+/* Cabeçalho */
+.site-header{border-top:4px solid #166AEA;border-bottom:1px solid #DDE3EE;background:#fff;position:sticky;top:0;z-index:50}
+.site-header .in{max-width:1200px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:16px;position:relative}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#0D1B2E}
+.brand img{height:58px;width:auto}
+.brand b{font-family:'Source Serif 4',Georgia,serif;font-weight:800;font-size:22px;line-height:1;display:block}
+.brand small{font-size:13px;color:#4A5568}
+.mainnav{display:flex;align-items:center;gap:26px;font-size:15px;font-weight:500}
+.mainnav a{text-decoration:none;color:#0D1B2E;padding-bottom:4px;border-bottom:2px solid transparent}
+.mainnav a.active{color:#002E5D;font-weight:600;border-bottom-color:#002E5D}
+.mainnav a.cta{background:#002E5D;color:#fff;padding:12px 20px;border-radius:999px;font-weight:600;border:none}
+.menubtn{display:none;width:44px;height:44px;border-radius:12px;border:1px solid #DDE3EE;background:#fff;align-items:center;justify-content:center;cursor:pointer;color:#0D1B2E}
+
+/* Telemóvel */
+@media (max-width:860px){
+ .site-header .in{padding:10px 18px}
+ .brand img{height:46px}
+ .menubtn{display:flex}
+ .mainnav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;flex-direction:column;align-items:stretch;gap:0;padding:8px 18px 18px;border-bottom:1px solid #DDE3EE;box-shadow:0 8px 20px rgba(0,0,0,.08)}
+ .mainnav.open{display:flex}
+ .mainnav a{padding:14px 4px;border-bottom:1px solid #EEF1F6}
+ .mainnav a.active{border-bottom-color:#EEF1F6}
+ .mainnav a.cta{margin-top:10px;text-align:center}
+ main h1{font-size:38px !important}
+ main h2{font-size:30px !important}
+ main section > div{padding-left:18px !important;padding-right:18px !important}
+ main div[style*="padding: 64px"],main div[style*="padding: 56px"]{padding:28px !important}
+ main div[style*="flex: 0 0 240px"]{flex-basis:100% !important}
+}

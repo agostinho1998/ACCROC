@@ -1,0 +1,21 @@
+{
+  "atualizado": null,
+  "exemplo": true,
+  "posts": [
+    {
+      "date": "[DATA DO POST]",
+      "text": "[Início do texto do último post do Facebook – ex.: Magusto da associação este sábado na Associação do Outeiro da Cortiçada…]",
+      "link": "https://www.facebook.com/accrouteirodacorticadaipss"
+    },
+    {
+      "date": "[DATA DO POST]",
+      "text": "[Início do texto do post anterior]",
+      "link": "https://www.facebook.com/accrouteirodacorticadaipss"
+    },
+    {
+      "date": "[DATA DO POST]",
+      "text": "[Início do texto do post anterior]",
+      "link": "https://www.facebook.com/accrouteirodacorticadaipss"
+    }
+  ]
+}
