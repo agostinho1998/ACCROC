@@ -1,0 +1,36 @@
+# Atualiza as notícias e os eventos do site a partir da página de Facebook.
+# Corre sozinho a cada 3 horas; também se pode correr à mão em Actions → "Atualizar do Facebook" → Run workflow.
+name: Atualizar do Facebook
+
+on:
+  schedule:
+    - cron: '17 */3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Ir buscar posts ao Facebook
+        env:
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          FB_PAGE_TOKEN: ${{ secrets.FB_PAGE_TOKEN }}
+        run: node scripts/facebook.mjs
+      - name: Guardar alterações
+        run: |
+          if git diff --quiet -- data; then
+            echo "Nada mudou."
+          else
+            git config user.name "accroc-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data
+            git commit -m "Atualizar notícias e eventos do Facebook"
+            git push
+          fi

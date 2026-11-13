@@ -1,0 +1,22 @@
+{
+  "atualizado": null,
+  "exemplo": true,
+  "eventos": [
+    {
+      "title": "Festas da Aldeia",
+      "date": "[DATA DAS FESTAS]",
+      "place": "[LOCAL]",
+      "image": null,
+      "link": "https://www.facebook.com/accrouteirodacorticadaipss",
+      "iso": null
+    },
+    {
+      "title": "Passeio de Motorizadas",
+      "date": "[DATA DO PASSEIO]",
+      "place": "[PONTO DE PARTIDA]",
+      "image": null,
+      "link": "https://www.facebook.com/accrouteirodacorticadaipss",
+      "iso": null
+    }
+  ]
+}
